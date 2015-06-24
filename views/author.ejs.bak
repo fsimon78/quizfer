@@ -1,0 +1,2 @@
+    <p>Autor: <%= autor %> </p>
+    <a href="/">Volver </a>
