@@ -1,4 +1,0 @@
-    Autor: <p> <%= autor %> </p> <br><br>
-    <img src="/images/fer.jpg" WIDTH=178 HEIGHT=180 BORDER=2 ><br> </img> 
-    <a href="/">Volver </a>
-
