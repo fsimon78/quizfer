@@ -3,7 +3,7 @@ var models = require('../models/models.js')
 // GET /quizes/question
 
 exports.show = function(req, res){
-		models.Quiz.findById(req.params.quizId).then(function(quiz){
+		models.Quiz.findById(req.params.quizId.then(function(quiz){
 		res.render('quizes/show', {quiz: quiz});
 	})
 };
