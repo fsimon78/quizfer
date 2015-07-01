@@ -1,3 +1,19 @@
-    <p><%= respuesta %> </p>
-    <a href="/quizes/question">Intentelo otra vez </a>
-    
+
+<!DOCTYPE html>
+<html>
+
+  <body>
+  <table>
+      <% var i; for(i=0; i < quizes.length; i++) { %>
+      <tr><td><a href="/quizes<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+      <% } %>
+      </table>
+  </body>
+</html>
+
+<form method="get" action="/quizes/<%= quiz.id%>/answer">
+
+	Pregunta:<%= quiz.pregunta %> <p>
+	<input type= "text" name="respuesta" value="Respuesta"/>
+	<input type= "submit" value="Enviar">
+</form>

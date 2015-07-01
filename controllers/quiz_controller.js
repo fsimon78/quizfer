@@ -13,9 +13,11 @@ exports.show = function(req, res){
 exports.answer = function(req, res){
 	models.Quiz.findById(req.params.quizId).then(function(quiz){
 		if (req.query.respuesta === quiz.respuesta) {
-			res.render('quizes/answer', {quiz: quiz, respuesta: 'Correcta'});
+			res.render('quizes/answer', 
+								{quiz: quiz, respuesta: 'Correcta'});
 	}else{
-			res.render('quizes/answer', {quiz: quiz, respuesta: 'Incorrecto'});
+			res.render('quizes/answer', 
+								{quiz: quiz, respuesta: 'Incorrecto'});
 		}
 	})
 };	
