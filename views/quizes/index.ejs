@@ -1,5 +1,15 @@
-	<table>
-	<% var i; for (i=0; i<quizes.length; i++){ %>
-		<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
-		<% } %>
-	</table>
+<!DOCTYPE html>
+<html>
+
+  <body>
+  
+<div style="text-align:center;">
+		<% var i; for(i=0; i < quizes.length; i++) { %>
+			<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %><br></a></td></tr>
+			<% } %>
+			
+			</div>
+
+  </body>
+</html>
+
