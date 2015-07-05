@@ -30,7 +30,6 @@ var sequelize = new Sequelize (DB_name, user, pwd,
 
 
 
-
 //Importar la definición de la tabla Quiz en quiz.js
 var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 
@@ -48,7 +47,6 @@ sequelize.sync().then(function(){
 										respuesta: 'Lisboa'
 									})
 			.then(function(){console.log('Base de datos inicializada')});
-			//console.log('Prueba')
 		};
 	});
 });
