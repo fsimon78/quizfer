@@ -13,8 +13,6 @@ exports.load = function (req, res, next, quizId){
 
 // GET /quizes
 exports.index = function(req,res){
-
-// introducimos las busquedas
 	 
 	var filtro = req.query.search;
 	var condicion = ('%' + filtro + '%').replace(/ /g,'%');
