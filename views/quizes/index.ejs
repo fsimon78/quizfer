@@ -9,7 +9,7 @@
 
 
 
-
+			
 			<% var i; for(i=0; i < quizes.length; i++) { %>
 			<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %><br></a></td></tr>
 			<% } %>
@@ -20,6 +20,8 @@
 	<input type="text"  name="search" value="Buscar pregunta" />
 	<input type="submit" value="Buscar" />
 </form>			
+<br> <p>
+<a href="/quizes/new"><button type="button">Crear preguntas</button></a>
 			
 			</div>
 
