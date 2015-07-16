@@ -27,7 +27,7 @@ exports.create = function(req, res){
       } else {
         comment // save: guarda en DB campos texto de comment
         .save()
-        .then( function(){ res.redirect('/quizes/'+req.params.quizId)}) 
+        .then( function(){ res.redirect('/quizes'+req.params.quizId)}) 
       }      // res.redirect: Redirección HTTP a lista de preguntas
     }
   ).catch(function(error){next(error)});
