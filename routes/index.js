@@ -3,6 +3,8 @@ var router = express.Router();
 
 var quizController = require('../controllers/quiz_controllers');
 var commentController = require('../controllers/comment_controller');
+var sessionController = require('../controllers/session_controller');
+
 
 
 /* GET home page. */
@@ -13,6 +15,12 @@ router.get('/', function(req, res) {
 // Autoload de comandos con :quizId
 
 router.param('quizId', quizController.load); //autoload  :quizId
+
+
+//definicion de las rutas de sesion
+router.get('/login', sessionController.new);
+router.post('/login', sessionController.create);
+router.get('/logout', sessionController.destroy);
 
 
 //Antes de la BBDD
