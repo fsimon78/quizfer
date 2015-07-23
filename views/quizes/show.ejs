@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html>
-
-  <body>
-console.log("paso1");    
     <form method="get" action="/quizes/<%= quiz.id %>/answer">
-    Pregunta: <%= quiz.pregunta %> 
-    <p>
-    <input type="text" name="respuesta" value="Respuesta"/>
-    <input type="submit" value="Enviar">
-    </p>
-console.log("paso2"); 
-    <p> <a href="/quizes/<%= quiz.id %>/comments/new"><button>Nuevo Comentario</button></a></p>
+    	Pregunta: <%= quiz.pregunta %> 
+    	<p>      
+    	<input type="text" name="respuesta" value="Respuesta"/>
+   	  <input type="submit" value="Enviar">    
+			</form>
 
-console.log("paso3"); 
+
+<br><p><a href="/quizes"><button type="button" class="btn btn-default">Lista preguntas</button></a>
+
+<p> <a href="/quizes/<%= quiz.id %>/comments/new"><button type="button" class="btn btn-default">Nuevo comentario</button></a></p>
+
 		<p><strong>Comentarios:</strong></p>    
     <%for(index in quiz.Comments){%>
-    		<%if(quiz.Comments[index].publicado || session.user) {%>
+    			<%if(quiz.Comments[index].publicado || session.user){%>
     			<p>- <%=quiz.Comments[index].texto%>
-    				<%if session.user && !quiz.Comments[index].publicado {%>
-    					<a href="/quizes/<%= quiz.id %>/comments/<%=Quiz.Comments[index].id%>/publish">
-    					<button>Publicar</button></a>
+    				<%if(session.user && !quiz.Comments[index].publicado){%>
+				<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/publish">
+							<button type="button" class="btn btn-default">Publicar</button></a>
     			  <%}%>
 					</p>
 				<%}%>    			    
-			<%}%>   	
- 	
-
-    </form>
-  </body>
-</html>
+			<%}%>
