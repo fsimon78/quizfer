@@ -2,21 +2,22 @@
 <html>
 
   <body>
-    
+console.log("paso1");    
     <form method="get" action="/quizes/<%= quiz.id %>/answer">
     Pregunta: <%= quiz.pregunta %> 
     <p>
     <input type="text" name="respuesta" value="Respuesta"/>
     <input type="submit" value="Enviar">
     </p>
-
+console.log("paso2"); 
     <p> <a href="/quizes/<%= quiz.id %>/comments/new"><button>Nuevo Comentario</button></a></p>
 
+console.log("paso3"); 
 		<p><strong>Comentarios:</strong></p>    
     <%for(index in quiz.Comments){%>
-    		<%if(quiz.Comments[index].publicado || session.user) {%>
+    		<%if(Quiz.Comments[index].publicado || session.user) {%>
     			<p>- <%=quiz.Comments[index].texto%>
-    				<%if session.user && !quiz.Comments[index].publicado {%>
+    				<%if session.user && !Quiz.Comments[index].publicado {%>
     					<a href="/quizes/<%= quiz.id %>/comments/<%=Quiz.Comments[index].id%>/publish">
     					<button>Publicar</button></a>
     			  <%}%>
