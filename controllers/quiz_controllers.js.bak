@@ -37,6 +37,10 @@ exports.index = function(req,res){
 };
 
 
+
+
+
+
 exports.show = function (req, res){
 		res.render('quizes/show', { quiz: req.quiz, errors: []});
 };
