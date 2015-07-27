@@ -44,6 +44,24 @@ app.use(function(req, res, next){
 		next();
 	});
 	
+	
+// Auto-logout de sesión
+app.use(function(req, res, next){
+  if (req.session.user) {
+    var timeoff = 120000; // tiempo de expiración de la sesión
+    if(!req.session.timeout) { req.session.timeout = Date.now();}
+
+    if (Date.now() > (timeoff + req.session.timeout)) {
+      delete req.session.user;
+      console.log('TIMEOUT');
+    }
+    console.log(Date.now() - req.session.timeout); // lapso de tiempo
+    req.session.timeout = Date.now(); // hora de la útima transacción
+
+  } else { console.log('Session not started');}
+  next();
+});	
+	
 app.use('/', routes);
 //app.use('/users', users);
 
